@@ -25,7 +25,7 @@ Si PyTorch avec CUDA est déjà installé, conserver cette installation fonction
 
 ## Exécution / 2 modes
 
-Ouvrir `notebook_final_V10_corrige_commente.ipynb` dans VS Code ou Jupyter et **exécuter de haut en bas**.
+Ouvrir `notebook_final_V10.ipynb` dans VS Code ou Jupyter et **exécuter de haut en bas**.
 
 1. **Reproduction fidèle avec checkpoints :** déposer, sous `results/`, `denoiser_full_v10.pt`, `boosting_v10_unet_geometry.joblib` et `extra_trees_v7.joblib` issus du projet original. Laisser `USE_SAVED_MODELS = True`. Le notebook produit `submissions/submission_v10_reproduite.csv` et compare avec `submissions/submission_v10_unet_geometry.csv` si présent (tolérance 1e-7). **Pour une reproduction exacte, joindre aussi les poids originaux au ZIP de remise.**
 2. **Réentraînement depuis zéro :** si les fichiers checkpoints sont absents, le notebook les régénère sur les 2000 images autorisées (U-Net 65 époques, 5 augmentations/cible, Boosting70, ExtraTrees42), sauvegarde les modèles, puis crée le CSV. Les résultats peuvent différer légèrement selon versions et matériel GPU. Pour forcer le réentraînement : `USE_SAVED_MODELS = False`.
